@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    nfe-paulistana (1.0.6)
+    nfe-paulistana (1.0.8)
       nokogiri (>= 1.5.9)
       savon (~> 2.3)
       signer
