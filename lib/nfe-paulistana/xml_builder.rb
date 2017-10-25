@@ -60,7 +60,8 @@ module NfePaulistana
       :nr_endereco => '',
       :compl_endereco => '',
       :bairro => '',
-      :codigo_municipio_tomador => '', 
+      :codigo_municipio_tomador => '0', 
+      :regime_especial_tributacao => '',
       :cidade => '',
       :uf => '',
       :cep => '',
@@ -267,7 +268,7 @@ module NfePaulistana
               xml.IssRetido data[:iss_retido]
               xml.ItemListaServico data[:item_lista_servico]
               xml.CodigoCnae data[:codigo_cnae]
-              xml.CodigoTributacaoMunicipio data[:codigo_tributacao_municipio]
+              xml.CodigoTributacaoMunicipio data[:codigo_tributacao_municipio] if data[:codigo_tributacao_municipio] != '0' 
               xml.Discriminacao data[:discriminacao]
               xml.CodigoMunicipio data[:codigo_municipio_prestador]
               xml.CodigoPais data[:codigo_pais]
@@ -313,7 +314,7 @@ module NfePaulistana
                 xml.Email data[:email_tomador]
               }
             }
-            xml.RegimeEspecialTributacao data[:regime_especial_tributacao]
+            #xml.RegimeEspecialTributacao data[:regime_especial_tributacao] if data[:regime_especial_tributacao] != '0' || data[:regime_especial_tributacao].blank?
             xml.OptanteSimplesNacional data[:optante_simples_nacional]
             xml.IncentivoFiscal data[:incentivo_fiscal]
 
